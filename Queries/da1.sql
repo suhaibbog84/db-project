@@ -99,14 +99,35 @@ FROM EMPLOYEES
 WHERE SALARY > 5000
   AND EMPLOYEES.SALARY < 12000;
 
+--RANGE CHECKING IS MUCH SIMPLER IN SQL USING
+--BETWEEN..... AND
+--Is same as COLUMN_VALUE >= lowerLimit and COLUMN_VALUE <= UpperLimit
+--Above query can be much simpler and more readable as below
+SELECT * FROM EMPLOYEES
+WHERE SALARY BETWEEN 5000 AND 12000;
+
 --Display the employees that have JOB_ID of
 --AD_VP
 --AD_ASST
 --FI_ACCOUNT
 --AC_ACCOUNT
-SELECT *
+SELECT FIRST_NAME, JOB_ID
 FROM EMPLOYEES
 WHERE JOB_ID = 'AD_VP'
    OR JOB_ID = 'AD_ASST'
    OR JOB_ID = 'FI_ACCOUNT'
    OR JOB_ID = 'AC_ACCOUNT';
+
+--using keyword in or multiple possible value of same column in condition
+SELECT FIRST_NAME, JOB_ID
+FROM EMPLOYEES
+WHERE JOB_ID IN ('AD_VP', 'AD_ASST', 'FI_ACCOUNT', 'AC_ACCOUNT');
+
+--How to say not in SQL
+-- for equality != or <> ,
+---Find OUT ALL REGIONS EXCEPT THE REGION WITH REGION_ID OF 1
+SELECT * FROM REGIONS
+WHERE REGION_ID != 1;
+
+-- for Between AND --> NOT Between .. AND
+--for IN --> NOT IN
