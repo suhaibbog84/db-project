@@ -135,4 +135,56 @@ SELECT * FROM REGIONS
 WHERE REGION_NAME <> 'Americas';
 
 -- for Between AND --> NOT Between .. AND
+
+--Display the employees that DOES NOT make
+--more than 500 and less than 12000
+
+SELECT FIRST_NAME, SALARY
+FROM EMPLOYEES
+WHERE SALARY NOT BETWEEN 5000 AND 12000;
+
 --for IN --> NOT IN
+--Display the employees that have JOB_ID THAT IS NOT THE SAME AS:
+--AD_VP, AD_ASST, FI_ACCOUNT, AC_ACCOUNT
+SELECT FIRST_NAME, JOB_ID
+FROM EMPLOYEES
+WHERE JOB_ID NOT IN ('AD_VP', 'AD_ASST', 'FI_ACCOUNT', 'AC_ACCOUNT');
+
+--HOW TO USE NULL IN CONDITION?
+--all department with null value
+SELECT * FROM DEPARTMENTS
+WHERE MANAGER_ID IS NULL ;
+
+--all department with value that is not null
+SELECT * FROM DEPARTMENTS
+WHERE MANAGER_ID IS NOT NULL ;
+
+--sorting the result in ascending (LOW to HIGH) or descending order (HIGH to LOW)
+--ORDER BY CLAUSE CAN BE USED TO ORDER THE RESULT of your query
+--it use either column name or column index
+--it must be the last part of the statement
+
+--Display employee FIRST_NAME and LAST_NAME and salary
+--try to sort by below criteria separately
+--FIRST_NAME ASC
+--salary DESC
+--LAST_NAME DESC
+SELECT FIRST_NAME, LAST_NAME, SALARY
+FROM EMPLOYEES
+--ORDER BY FIRST_NAME ASC;
+--ORDER BY SALARY DESC ;
+--ORDER BY LAST_NAME DESC;
+ORDER BY 1 DESC; --THIS MEAN SORT THE RESULT BY 1ST COLUMN
+
+--WHAT ABOUT THE PARTIAL SEARCH
+--WE USE LIKE AND % (WILD CARD)
+--% can represent 0 or more character of any kind
+--_can represent exactly one character of any kind
+
+--Display ALL THE FIRST NAME THAT START WITH LETTER A IN EMPLOYEES TABLES
+SELECT FIRST_NAME
+FROM EMPLOYEES
+WHERE FIRST_NAME LIKE 'A%';
+
+--Display ALL THE FIRST NAME THAT ENDS WITH LETTER A IN EMPLOYEES TABLES
+
