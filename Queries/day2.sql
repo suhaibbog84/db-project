@@ -40,3 +40,24 @@ WHERE PHONE_NUMBER LIKE '515%'; --21 STARTS WITH 515
 SELECT PHONE_NUMBER FROM EMPLOYEES
 WHERE PHONE_NUMBER LIKE '%.121.%'; --8 CONTAINS 121 in the middle
 
+--You can optionally give an ALIAS (NICKNAME) for your
+--column to change the reuslting column name (only on display not database)
+--using the keyword as right after column name
+--
+--Display all first name , salary in employees table
+-- modify the column name for salary in result to money
+
+SELECT FIRST_NAME, SALARY AS MONEY
+FROM EMPLOYEES;
+
+--Display all first name , Last name in employees table
+-- modify the column name for as below
+--First_Name -> GIVEN_NAME  LAST_NAME --> FAMILY_NAME
+SELECT FIRST_NAME AS GIVEN_NAME , LAST_NAME AS FAMILY_NAME
+FROM EMPLOYEES;
+
+--Display all first name , Last name in employees table
+-- modify the column name for as below
+--First_Name -> GIVEN NAME  LAST_NAME --> FAMILY NAME
+SELECT FIRST_NAME AS "GIVEN NAME" , LAST_NAME AS "FAMILY NAME"
+FROM EMPLOYEES;
