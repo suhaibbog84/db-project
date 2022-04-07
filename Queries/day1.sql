@@ -68,7 +68,7 @@ FROM EMPLOYEES;
 SELECT *
 FROM EMPLOYEES
 WHERE FIRST_NAME = 'Ellen';
-Ellen != ELLEN as values are case sensitive
+--Ellen != ELLEN as values are case sensitive
 
 --Display the employee FIRST_NAME, LAST_NAME, SALARY
 --for the employee with SALARY 11000
