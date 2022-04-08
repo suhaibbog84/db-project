@@ -41,3 +41,7 @@ INSERT INTO STUDENTS (student_id,student_name,program_id)
 VALUES (105,'Mia',null);
 INSERT INTO STUDENTS (student_id,student_name,program_id)
 VALUES (106,'Kory',null);
+
+SELECT s.STUDENT_NAME, s.PROGRAM_ID, p.PROGRAM_NAME
+FROM STUDENTS s
+         INNER JOIN PROGRAMS p ON p.PROGRAM_ID= s.PROGRAM_ID;
