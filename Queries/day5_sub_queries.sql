@@ -51,10 +51,29 @@ SELECT FIRST_NAME
 FROM EMPLOYEES
 WHERE DEPARTMENT_ID = 90;
 
+--NOW COMBINE THEM
 SELECT FIRST_NAME
 FROM EMPLOYEES
 WHERE DEPARTMENT_ID = (SELECT DEPARTMENT_ID FROM DEPARTMENTS
                          WHERE DEPARTMENT_NAME = 'Executive');
+
+-- FIND OUT THE DEPARTMENT ID OF EXECUTIVE
+--AND Administration DEPARTMENT
+SELECT DEPARTMENT_ID FROM DEPARTMENTS
+    WHERE DEPARTMENT_NAME IN ('Executive', 'Administration');
+
+SELECT FIRST_NAME FROM EMPLOYEES
+WHERE DEPARTMENT_ID IN (10, 90);
+
+
+/*
+Select * FROM (
+                  select  first_name as Given_Name from employees)
+Where Given_Name = 'Steven' ;
+#
+Hold that thought 💭 until better example on why you might wanna try.
+
+ */
 
 
 
