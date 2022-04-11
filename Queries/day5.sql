@@ -1,0 +1,33 @@
+SELECT *
+FROM EMPLOYEES;
+
+--Display Employees FIRST_NAME, SALARY_GRADE (we don't have such column like salary grade)
+--SALARY_GRADE Column should have below values
+--When SALARY > 8000 ---> "Above Average"
+--Else "Below Average"
+
+SELECT FIRST_NAME,
+       SALARY,
+       CASE
+           WHEN SALARY > 8000 THEN 'ABOVE AVERAGE'
+           ELSE 'BELOW AVERAGE'
+           END AS SALARY_GRADE
+FROM EMPLOYEES;
+
+-- Display Employees FIRST_NAME, SALARY , SALARY_GRADE2
+--- SALARY_GRADE Column should be below VALUES
+-- WHEN SALARY > 20000  THEN "A"
+-- WHEN SALARY BETWEEN 10000 AND 20000  THEN "B"
+-- WHEN SALARY BETWEEN 5000 AND 10000  THEN "C"
+-- ELSE "D"
+
+SELECT FIRST_NAME,
+       SALARY,
+       CASE
+           WHEN SALARY > 20000 THEN 'A'
+           WHEN SALARY BETWEEN 10000 AND 20000 THEN 'B'
+           WHEN SALARY BETWEEN 5000 AND 10000 THEN 'C'
+           ELSE 'D'
+           END AS SALARY_GRADE2
+FROM EMPLOYEES
+ORDER BY SALARY;
