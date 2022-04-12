@@ -28,8 +28,11 @@ public class LoopingThroughResultSet {
                     + rs.getString("REGION_NAME"));
              */
 
+            rs.previous();
+
         } catch (SQLException e) {
             System.out.println("Exception Occurred " + e.getMessage());
+            e.printStackTrace();
         }
 
 
