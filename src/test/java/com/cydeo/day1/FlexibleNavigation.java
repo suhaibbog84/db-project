@@ -43,14 +43,27 @@ public class FlexibleNavigation {
         System.out.println("rs.last() " + rs.getString("REGION_ID") + " "
                 + rs.getString("REGION_NAME"));
 
-        rs.first();
+        rs.first(); // row 1
         System.out.println("rs.first() " + rs.getString("REGION_ID") + " "
                 + rs.getString("REGION_NAME"));
 
-        rs.absolute(3);
+        rs.absolute(3); // row 3
         System.out.println("rs.absolute(3) " + rs.getString("REGION_ID") + " "
                 + rs.getString("REGION_NAME"));
 
+        rs.previous(); // row 2
+        System.out.println("rs.previous() " + rs.getString("REGION_ID") + " "
+                + rs.getString("REGION_NAME"));
+
+        rs.beforeFirst(); //this method just puts you all the way at the top, so you can start all over
+       // System.out.println("rs.beforeFirst() " + rs.getString("REGION_ID") + " "
+         //       + rs.getString("REGION_NAME"));
+        rs.next();
+        rs.afterLast(); //we are at the after last location, we use it once we want to go
+        // backward using the loop.
+        rs.previous();
+        System.out.println("rs.previous() " + rs.getString("REGION_ID") + " "
+                + rs.getString("REGION_NAME"));
 
     }
 }
