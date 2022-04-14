@@ -38,6 +38,17 @@ public class GettingColumnInformation {
         System.out.println("rsmd.getColumnName(2) = " + rsmd.getColumnName(2));
 
 
+        int totalColumnCount = rsmd.getColumnCount();
+
+        for (int columnIndex = 1; columnIndex <= totalColumnCount; columnIndex++) {
+        //    System.out.println("rsmd.getColumnName(" + columnIndex + ") = "
+        //            + rsmd.getColumnName(columnIndex));
+            System.out.println(rsmd.getColumnName(columnIndex));
+        }
+
+        }
+
+
 
     }
 }
