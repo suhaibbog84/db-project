@@ -9,14 +9,15 @@ public class Library2DBTest {
 
         String url = "jdbc:mysql://34.230.35.214:3306/library2";
         String username = "library2_client";
-        String password = "6s2LQQTjBcGFfDhY ";
+        String password = "6s2LQQTjBcGFfDhY";
 
         Connection conn = DriverManager.getConnection(url, username, password);
         Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
         ResultSet rs = stmt.executeQuery("SELECT * FROM books");
 
         while (rs.next()) {
-            System.out.println("rs.getString(\"name\") = " + rs.getString("name"));
+            System.out.println("rs.getString(\"name\") = "
+                    + rs.getString("name"));
 
         }
     }
