@@ -15,10 +15,25 @@ public class Library2DBTest {
         Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
         ResultSet rs = stmt.executeQuery("SELECT * FROM books");
 
+        /*
         while (rs.next()) {
             System.out.println("rs.getString(\"name\") = "
                     + rs.getString("name"));
-
         }
+         */
+
+        rs.next(); // row 1
+        System.out.println("rs.getString(\"name\") = " + rs.getString("name"));
+
+        //What if now I want to run this query : select count(*) from books
+        //Just call tge message again and save the result
+        // into rs variable or new variable with type ResultSet
+        rs = stmt.executeQuery("SELECT COUNT(*) AS BOOK_COUNT from books");
+        //move to the first row
+        rs.next();
+        System.out.println("rs.getString(\"BOOK_COUNT\") = "
+                + rs.getString("BOOK_COUNT"));
+
+
     }
 }
